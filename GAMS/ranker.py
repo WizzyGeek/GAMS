@@ -10,7 +10,7 @@ def first_abs_moment(p: IntArray) -> float:
     return np.sum(np.abs(p - mean))
 
 def predef_moment(p: IntArray, s: int) -> float:
-    return sum(abs(s - i) for i in p) # TODO: Numpy
+    return np.sum(np.abs(s - p))
 
 def magic_sums(board: IntArray) -> IntArray:
     return np.concatenate((np.sum(board, axis=0), np.sum(board, axis=1), [np.trace(board), np.sum(board.ravel()[board.shape[0]-1:-1:board.shape[0]-1])]))
